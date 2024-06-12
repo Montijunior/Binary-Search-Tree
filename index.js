@@ -7,6 +7,9 @@ binarySearchTree.buildTree([
   2000,
 ]);
 
+binarySearchTree.insert(11);
+binarySearchTree.insert(99);
+
 // Visualize the binary search tree
 const prettyPrint = (node, prefix = "", isLeft = true) => {
   if (node === null) {

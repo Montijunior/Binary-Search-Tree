@@ -34,6 +34,31 @@ class Tree {
     });
     return unique;
   }
+  // insert(value) and insertNode(root, node) helper function
+  insert(value) {
+    let node = new Node(value);
+    if (!this.root) {
+      this.root = node;
+    } else {
+      this.insertNode(this.root, node);
+    }
+  }
+
+  insertNode(root, node) {
+    if (node.value < root.value) {
+      if (root.left === null) {
+        root.left = node;
+      } else {
+        this.insertNode(root.left, node);
+      }
+    } else {
+      if (root.right === null) {
+        root.right = node;
+      } else {
+        this.insertNode(root.right, node);
+      }
+    }
+  }
 }
 
 module.exports = Tree;
